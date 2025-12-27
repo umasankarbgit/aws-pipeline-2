@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Using CodeBuild with CodeDeploy"
+
+  build:
+    commands:
+      - echo "No build step for static Apache app"
+
+artifacts:
+  files:
+    - '**/*'
+

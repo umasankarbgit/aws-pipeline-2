@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /httpd
+    destination: /var/www/html
+
+hooks:
+  BeforeInstall:
+    - location: scripts/cleanup.sh
+      runas: root
+    - location: scripts/install_httpd.sh
+      runas: root
+
+  ApplicationStop:
+    - location: scripts/stop_httpd.sh
+      runas: root
+
+  ApplicationStart:
+    - location: scripts/start_httpd.sh
+      runas: root
+
